@@ -14,11 +14,12 @@ print("Seleccione una de las siguientes opciones para realizar un cambio a la li
 if cantidad <= 100:
     while True:
         print("1.- Agregar nuevo articulo")
-        print("1.- Agregar compra (aumenta inventario)")
-        print("2.- Ver listado")
-        print("3.- Buscar ")
-        print("2.- Agregar venta")
-        print("2.- Eliminar ")
+        print("2.- Agregar compra (aumenta inventario)")
+        print("3.- Ver listado")
+        print("4.- Buscar ")
+        print("5.- Agregar venta")
+        print("6.- Eliminar ")
+        print("7.- Salir ")
 
         opcion = int(input("Seleccione una opcion: "))
         if opcion == 1:
@@ -27,10 +28,29 @@ if cantidad <= 100:
             inventario.append(int(input("Numero de unidades: ")))
             preciodc.append(int(input("Precio de Compra: ")))
             preciodv.append((int(input("Precio de venta "))))
-            unive.append(int(input("Unidades vendidas ")))
+            unive.append(float(input("(float)Unidades vendidas ")))
             ventas.append(float(input("(float)Ventas totales del articulo")))
             cantidad += 1
 
 
-        else:
-            print(producto)
+        elif opcion == 2:
+          d = int(input("ID del Articulo? "))
+          b =int(input("Ingrese que se desea agregar al inventario "))
+
+          inventario[d] = inventario[d] + b
+
+          print(
+              "ID={} - Nombre={} - Cantidad={} - P-Compra=${} - P-Venta=${} - Unidades vendidas={} - Ventas Totales2={}".format(
+                  num[d], producto[d], inventario[d], preciodc[d], preciodv[d], unive[d], ventas[d]))
+
+          input("Enter para continual...")
+
+
+        elif opcion == 3:
+            i = 0
+            for i in range(cantidad):
+                print("ID={} - Nombre={} - Cantidad={} - P-Compra=${} - P-Venta=${} - Unidades vendidas={} - Ventas Totales2={}" .format(
+                    num[i], producto[i], inventario[i], preciodc[i], preciodv[i], unive[i], ventas[i]))
+
+            input("Enter para continual...")
+
