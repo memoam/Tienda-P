@@ -24,13 +24,18 @@ if cantidad <= 100:
 
         opcion = int(input("Seleccione una opcion: "))
         if opcion == 1:
-            num.append(cantidad-1)
+            num.append(cantidad)
             producto.append(input("Nombre del articulo: "))
             inventario.append(int(input("Numero de unidades: ")))
-            preciodc.append(int(input("Precio de Compra: ")))
-            preciodv.append((int(input("Precio de venta "))))
-            unive.append(float(input("(float)Unidades vendidas ")))
-            ventas.append(float(input("(float)Ventas totales del articulo")))
+            preciodc.append(float(input("Precio de Compra: ")))
+            preciodv.append((float(input("Precio de venta "))))
+            unive.append(int(input("Unidades vendidas ")))
+            ventas.append(float(input("Ventas totales del articulo")))
+            print(
+                "ID={} - Nombre={} - Cantidad={} - P-Compra=${} - P-Venta=${} - Unidades vendidas={} - Ventas Totales={}".format(
+                    num[cantidad], producto[cantidad], inventario[cantidad], preciodc[cantidad], preciodv[cantidad], unive[cantidad], ventas[cantidad]))
+
+
             cantidad += 1
 
             input("Enter para continual...")
@@ -60,7 +65,7 @@ if cantidad <= 100:
         elif opcion == 4:
             d = int(input("ID del Articulo? "))
             print(
-                    "ID={} - Nombre={} - Cantidad={} - P-Compra=${} - P-Venta=${} - Unidades vendidas={} - Ventas Totales2={}".format(
+                    "ID={} - Nombre={} - Cantidad={} - P-Compra=${} - P-Venta=${} - Unidades vendidas={} - Ventas Totales={}".format(
                         num[d], producto[d], inventario[d], preciodc[d], preciodv[d], unive[d], ventas[d]))
             input("Enter para continual...")
 
@@ -75,7 +80,7 @@ if cantidad <= 100:
             ventas[d] = ventas[d] + b
 
             print(
-                "ID={} - Nombre={} - Cantidad={} - P-Compra=${} - P-Venta=${} - Unidades vendidas={} - Ventas Totales2={}".format(
+                "ID={} - Nombre={} - Cantidad={} - P-Compra=${} - P-Venta=${} - Unidades vendidas={} - Ventas Totales={}".format(
                     num[d], producto[d], inventario[d], preciodc[d], preciodv[d], unive[d], ventas[d]))
 
             input("Enter para continual...")
