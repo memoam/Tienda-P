@@ -19,7 +19,8 @@ if cantidad <= 100:
         print("4.- Buscar ")
         print("5.- Agregar venta")
         print("6.- Eliminar ")
-        print("7.- Salir ")
+        print("7.- Ventas Totales ")
+        print("0.- Salir ")
 
         opcion = int(input("Seleccione una opcion: "))
         if opcion == 1:
@@ -31,6 +32,8 @@ if cantidad <= 100:
             unive.append(float(input("(float)Unidades vendidas ")))
             ventas.append(float(input("(float)Ventas totales del articulo")))
             cantidad += 1
+
+            input("Enter para continual...")
 
 
         elif opcion == 2:
@@ -53,4 +56,55 @@ if cantidad <= 100:
                     num[i], producto[i], inventario[i], preciodc[i], preciodv[i], unive[i], ventas[i]))
 
             input("Enter para continual...")
+
+        elif opcion == 4:
+            d = int(input("ID del Articulo? "))
+            print(
+                    "ID={} - Nombre={} - Cantidad={} - P-Compra=${} - P-Venta=${} - Unidades vendidas={} - Ventas Totales2={}".format(
+                        num[d], producto[d], inventario[d], preciodc[d], preciodv[d], unive[d], ventas[d]))
+            input("Enter para continual...")
+
+        elif opcion == 5:
+            d = None
+            b = None
+            d = int(input("ID del Articulo? "))
+            b = int(input("Ingrese la cantidad vendida"))
+
+            inventario[d] = inventario[d] - b
+            unive[d] = unive[d] + b
+            ventas[d] = ventas[d] + b
+
+            print(
+                "ID={} - Nombre={} - Cantidad={} - P-Compra=${} - P-Venta=${} - Unidades vendidas={} - Ventas Totales2={}".format(
+                    num[d], producto[d], inventario[d], preciodc[d], preciodv[d], unive[d], ventas[d]))
+
+            input("Enter para continual...")
+
+        elif opcion == 6:
+            d = None
+            d = int(input("ID del Articulo? "))
+            num.remove(num[d])
+            producto.append(producto[d])
+            inventario.append(inventario[d])
+            preciodc.append(preciodc[d])
+            preciodv.append(preciodv[d])
+            unive.append(unive[d])
+            ventas.append(ventas[d])
+
+            input("Enter para continual...")
+
+        elif opcion == 7:
+            i = 0
+            y = 0
+            for i in range(cantidad):
+                y = y + ventas[i]
+            print("ventas totales = " + y)
+            input("Enter para continual...")
+
+
+
+        else:
+            exit()
+
+
 
